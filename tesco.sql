@@ -1,0 +1,341 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 27, 2020 at 09:10 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `tesco`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(29, '2014_10_12_000000_create_users_table', 1),
+(30, '2014_10_12_100000_create_password_resets_table', 1),
+(31, '2019_08_19_000000_create_failed_jobs_table', 1),
+(32, '2020_11_14_175829_add_eno_field_to_users_table', 1),
+(33, '2020_11_22_114015_create_profiles_table', 1),
+(34, '2020_11_24_144534_create_categories_table', 1),
+(35, '2020_11_24_174019_create_files_table', 1),
+(36, '2020_11_24_174732_create_fcategories_table', 1),
+(37, '2020_11_25_080230_create_probs_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `probs`
+--
+
+CREATE TABLE `probs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `size` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` double(8,2) DEFAULT NULL,
+  `sku` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `template` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `x` double(8,2) DEFAULT NULL,
+  `y` double(8,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `probs`
+--
+
+INSERT INTO `probs` (`id`, `created_at`, `updated_at`, `name`, `size`, `price`, `sku`, `template`, `x`, `y`) VALUES
+(0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'WALKERS QUAVERS SNACKS CHEESE BAG PLASTIC 6 PACK X 16 G', '', 1.50, '1', 'nuts', 0.03, 0.08),
+(1, NULL, NULL, 'TESCO BOMBAY MIX SAVOURY SPICED CRUNCH BAG PLASTIC 200 G', '', 1.00, '2', 'nuts', 0.11, 0.08),
+(2, NULL, NULL, 'No Image', '', NULL, '3', 'nuts', 0.31, 0.08),
+(3, NULL, NULL, 'TESCO UK PAPRICA CORN POUCH 80 G', '', 1.00, '4', 'nuts', 0.36, 0.08),
+(4, NULL, NULL, 'TESCO WASABI AND CHILLI MIX BAG PLASTIC 150 G', NULL, 1.50, '5', 'nuts', 0.42, 0.08),
+(6, NULL, NULL, 'TESCO BEANS SOY BROAD BAG PLASTIC 120 G ', NULL, 1.00, '6', 'nuts', 0.50, 0.08),
+(7, NULL, NULL, 'TESCO BEEF JERKY CHIPOTLE AND HONEY MARINATED IN HONEY WOOD SMOKED AND SLOW COOKED BAG PLASTIC 40 G', NULL, NULL, '7', 'nuts', 0.58, 0.08),
+(8, NULL, NULL, 'TESCO BEEF JERKY CHIPOTLE AND HONEY MARINATED IN HONEY WOOD SMOKED AND SLOW COOKED BAG PLASTIC 40 G', NULL, 1.50, '7', 'nuts', 0.62, 0.08),
+(9, NULL, NULL, 'TESCO BEEF JERKY ORIGINAL MARINATED IN HERBS AND SPICES WOOD SMOKED AND SLOW COOKED BAG PLASTIC 40 G', NULL, 1.50, '9', 'nuts', 0.67, 0.08),
+(10, NULL, NULL, 'TESCO BEEF BILTONG ORIGINAL BAKED CRISP & CHEESY FLAVOURED POUCH 40 G', NULL, 1.50, '10', 'nuts', 0.71, 0.08),
+(11, NULL, NULL, 'WILD WESTBEEF JERKY ORIGINAL SILVERSIDE MARINATED SMOKED AND COOKED BAG PLASTIC 70 G', NULL, 1.00, '11', 'nuts', 0.77, 0.08),
+(12, NULL, NULL, 'CRUGA BEEF BILTONG CHILLI BAG PLASTIC 70 G', NULL, 2.99, '12', 'nuts', 0.83, 0.08),
+(13, NULL, NULL, 'MR.PORKY ORIGINAL SCRATCHINGS BAG PLASTIC 65 G', NULL, 0.85, '13', 'nuts', 0.89, 0.08),
+(14, NULL, NULL, 'MR.PORKY CRISPY STRIPS LIGHTER PORK SNACK BAG PLASTIC 35 G', NULL, NULL, '14', 'nuts', 0.98, 0.08),
+(15, NULL, NULL, 'WALKERS QUAVERS SNACKS CHEESE BAG PLASTIC 12 PACK X 16 G', NULL, NULL, '16', 'nuts', 0.03, 0.25),
+(16, NULL, NULL, 'TESCO COATED PEANUTS BBQ FLAVOUR BAG PLASTIC 200 G', NULL, 1.99, '17', 'nuts', 0.11, 0.21),
+(17, NULL, NULL, 'TESCO PEANUTS COATED SWEET CHILLI FLAVOUR BAG PLASTIC 200 G', NULL, 1.99, '18', 'nuts', 0.19, 0.21),
+(18, NULL, NULL, 'SENSATIONS COATED PEANUTS THAI SWEET CHILLI POUCH 150 G', NULL, 1.99, '19', 'nuts', 0.37, 0.21),
+(19, NULL, NULL, 'SENSATIONS PEANUTS CALIFORNIAN HONEY AND SALT OVEN ROASTED POUCH 145 G', NULL, 1.99, '20', 'nuts', 0.44, 0.21),
+(20, NULL, NULL, 'no image', NULL, NULL, '21', 'nuts', 0.51, 0.21),
+(21, NULL, NULL, 'GRAZE CRUNCH PEAS CORN CHIPS & CHILLI CORN SMOCKY BARBEQUE FLAVORED POUCH 104 G', NULL, 2.99, '22', 'nuts', 0.58, 0.21),
+(22, NULL, NULL, 'GRAZE NUT MIX SEA SALT AND PEPPER VEGGIE PROTEIN POWER CASHEWS EDAMAME BEANS CHICKPEAS POUCH 128 G', NULL, 2.99, '23', 'nuts', 0.69, 0.21),
+(23, NULL, NULL, 'GRAZE NUT MIX CASHEWS PEANUTS AND ALMONDS PUNCHY CHILI AND LIME POUCH 118 G', NULL, 2.99, '24', 'nuts', 0.75, 0.21),
+(24, NULL, NULL, 'SENSATIONS STREET MIX MEXICO CITY POUCH 115 G (WLKRS SENSATIONSMEXICO STREET MIX 115G)', NULL, 2.50, '25', 'nuts', 0.81, 0.21),
+(25, NULL, NULL, 'SENSATIONS STREET MIX MUMBAI POUCH 106 G', NULL, 2.50, '26', 'nuts', 0.99, 0.18),
+(26, NULL, NULL, 'TESCO PEANUTS SALT AND VINEGAR FLAVOUR BAG PLASTIC 200 G', NULL, 1.20, '27', 'nuts', 0.11, 0.33),
+(27, NULL, NULL, 'KP PEANUTS SALT AND VINEGAR BAG PLASTIC 225 G', NULL, 2.50, '28', 'nuts', 0.28, 0.33),
+(28, NULL, NULL, 'KP PEANUTS HONEY ROAST BAG PLASTIC 225 G', NULL, 2.50, '29', 'nuts', 0.40, 0.33),
+(29, NULL, NULL, 'KP PEANUTS UNSALTED ROASTED POUCH 250 G', NULL, 2.49, '30', 'nuts', 0.47, 0.33),
+(30, NULL, NULL, 'STOCKWELL & CO FRUIT AND NUTS MIX NATURAL UNSALTED BAG PLASTIC 200 G', NULL, NULL, '31', 'nuts', 0.58, 0.33),
+(31, NULL, NULL, 'TESCO MIXED NUTS AND RAISINS UNSALTED BAG PLASTIC 250 G', NULL, 1.25, '32', 'nuts', 0.76, 0.33),
+(32, NULL, NULL, 'TESCO PEANUTS RAISINS AND MILK CHOCLATE PEANUT UNSALTED BAG PLASTIC 200 G', NULL, 1.00, '33', 'nuts', 0.96, 0.33),
+(33, NULL, NULL, 'PEANUTS DRY ROASTED POUCH 250 G', NULL, 2.49, '34', 'nuts', 0.11, 0.45),
+(34, NULL, NULL, 'KP PEANUTS SPICY CHILLI BAG PLASTIC 225 G', NULL, 2.50, '35', 'nuts', 0.22, 0.45),
+(35, NULL, NULL, 'KP PEANUTS DRY ROASTED POUCH 415 G BIG SHARE SIZE', NULL, 1.99, '36', 'nuts', 0.32, 0.45),
+(36, NULL, NULL, 'KP PEANUTS JUMBO SALTED POUCH 200 G', NULL, 1.99, '37', 'nuts', 0.50, 0.45),
+(37, NULL, NULL, 'Dried Fruits/Nuts & Seeds Other', NULL, NULL, '38', 'nuts', 0.59, 0.45),
+(38, NULL, NULL, 'TESCO MIXED NUTS AND RAISINS UNSALTED BAG PLASTIC 500 G', NULL, 2.00, '39', 'nuts', 0.62, 0.45),
+(39, NULL, NULL, 'TESCO PISTACHIOS ROASTED AND SALTED BAG PLASTIC 200 G', NULL, 1.85, '40', 'nuts', 0.86, 0.45),
+(40, NULL, NULL, 'TESCO PISTACHIOS ROASTED AND SALTED BAG PLASTIC 300 G', NULL, 3.00, '41', 'nuts', 0.95, 0.45),
+(41, NULL, NULL, 'WALKERS QUAVERS SNACKS CHEESE BAG PLASTIC 12 PACK X 16 G', NULL, NULL, '42', 'nuts', 0.03, 0.38),
+(42, NULL, NULL, 'TESCO PEANUTS DRY ROASTED BAG PLASTIC 200 G', NULL, 1.00, '43', 'nuts', 0.11, 0.56),
+(43, NULL, NULL, 'TESCO PEANUTS DRY ROASTED BAG PLASTIC 550 G', NULL, 2.10, '44', 'nuts', 0.30, 0.56),
+(44, NULL, NULL, 'TESCO PEANUTS ROASTED AND SALTED BAG PLASTIC 550 G', NULL, 2.10, '45', 'nuts', 0.39, 0.56),
+(45, NULL, NULL, 'TESCO MIXED NUTS UNSALTED BAG PLASTIC 200 G', NULL, 2.00, '46', 'nuts', 0.60, 0.56),
+(46, NULL, NULL, 'TESCO MIXED NUT ROASTED AND SALTED BAG PLASTIC 200 G', NULL, 2.00, '47', 'nuts', 0.78, 0.56),
+(47, NULL, NULL, 'TESCO ALMONDS ROASTED AND SALTED BAG PLASTIC 100 G', NULL, 1.60, '48', 'nuts', 0.95, 0.56),
+(48, NULL, NULL, 'WALKERS QUAVERS CRISPS CHEESE BAG PALSTIC 24 X 16 G FAMILY PACK', NULL, NULL, '49', 'nuts', 0.03, 0.61),
+(49, NULL, NULL, 'TESCO PEANUTS ROASTED AND SALTED BAG PLASTIC 200 G', NULL, 1.00, '50', 'nuts', 0.13, 0.67),
+(50, NULL, NULL, 'WALKERS QUAVERS CRISPS CHEESE BAG PALSTIC 24 X 16 G FAMILY PACK', NULL, 1.19, '51', 'nuts', 0.30, 0.67),
+(51, NULL, NULL, 'KP PEANUTS ORIGINAL SALTED POUCH 250 G', NULL, 2.40, '52', 'nuts', 0.38, 0.67),
+(52, NULL, NULL, 'KP PEANUTS ORIGINAL S ALTED POUCH 415 G BIG SHARE PACK', NULL, 2.99, '53', 'nuts', 0.49, 0.67),
+(53, NULL, NULL, 'TESCO CASHEWS SEA SALT AND BLACK PEPPER BAG PLASTIC 150 G', NULL, 2.00, '54', 'nuts', 0.57, 0.67),
+(54, NULL, NULL, 'TESCO CASHEWS HONEY ROASTED BAG PLASTIC 150 G', NULL, 2.00, '55', 'nuts', 0.65, 0.67),
+(55, NULL, NULL, 'TESCO PEANUTS AND CASHEWS ROASTED HONEY BAG PLASTIC 200 G', NULL, 1.50, '56', 'nuts', 0.75, 0.67),
+(56, NULL, NULL, 'KP CASHEWS SALTED POUCH 110 G', NULL, 3.20, '57', 'nuts', 0.85, 0.67),
+(57, NULL, NULL, 'WALKERS WOTSITS SNACKS REALLY CHEESY BAG PLASTIC 24 PACK X 16.5 G', NULL, NULL, '58', 'nuts', 0.05, 0.80),
+(58, NULL, NULL, 'STOCKWELL & CO PEANUTS ROASTED AND SALTED POUCH 200 G', NULL, 0.46, '59', 'nuts', 0.13, 0.84),
+(59, NULL, NULL, 'TESCO MONKEY NUTS UNSALTED AND ROASTED BAG PLASTIC 300 G', NULL, 0.91, '60', 'nuts', 0.30, 0.84),
+(60, NULL, NULL, 'KP CASHEWS SALTED POUCH 110 G', NULL, 1.20, '61', 'nuts', 0.40, 0.84),
+(61, NULL, NULL, 'STOCKWELL & CO CASHEWS ROASTED AND SALTED BAG PLASTIC 125 G', NULL, 0.75, '62', 'nuts', 0.57, 0.84),
+(62, NULL, NULL, 'TESCO CASHEW ROASTED AND SALTED BAG PLASTIC 150 G', NULL, 2.00, '63', 'nuts', 0.76, 0.84),
+(63, NULL, NULL, 'TESCO CASHEW ROASTED AND SALTED BAG PLASTIC 350 G', NULL, 4.30, '64', 'nuts', 0.86, 0.84),
+(64, NULL, NULL, 'TESCO NUTS CASHEWS JUMBO ROASTED SALTED BAG PLASTIC 150 G', NULL, 1.19, '65', 'nuts', 0.93, 0.84),
+(69, NULL, NULL, 'CADBURY DAIRY MILK GIANT COCOLATE BUTTONS BAG PLASTIC 240 G BIG SHARE BAG', NULL, 2.00, '1', 'choco', 0.02, 0.08),
+(70, NULL, NULL, 'CADBURY DAIRY MILK GIANT COCOLATE CARAMEL NIBBLES BAG PLASTIC 242 G BIG SHARE BAG', NULL, 2.00, '2', 'choco', 0.06, 0.08),
+(71, NULL, NULL, 'CADBURY DAIRY MILK COCOLATE BITSA WISPA BAG PLASTIC 222 G BIG SHARE BAG', NULL, 2.00, '3', 'choco', 0.11, 0.08),
+(72, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE BUTTONS GIANT POUCH 119 G', NULL, 1.00, '4', 'choco', 0.09, 0.21),
+(73, NULL, NULL, 'CADBURY DARKMILK GIANT COCOLATE BUTTONS BAG PLASTIC 105 G', NULL, 1.00, '5', 'choco', 0.23, 0.21),
+(74, NULL, NULL, 'CADBURY DAIRY MILK GIANT COCOLATE BUTTONS ORANGE BAG PLASTIC 110 G', NULL, 1.00, '6', 'choco', 0.30, 0.21),
+(75, NULL, NULL, 'CADBURY DAIRY MILK GIANT COCOLATE BUTTONS WHITE BAG PLASTIC 110 G', NULL, 1.00, '7', 'choco', 0.38, 0.21),
+(76, NULL, NULL, 'CADBURY CHOCOLATE BITSA WISPA POUCH 110 G', NULL, 1.00, '8', 'choco', 0.42, 0.21),
+(77, NULL, NULL, 'CADBURY CHOCOLATE TWIRL BITES POUCH 109 G', NULL, 1.00, '9', 'choco', 0.03, 0.33),
+(78, NULL, NULL, 'CADBURY CHOCOLATE CRUNCHIE ROCKS POUCH 110 G', NULL, 1.00, '10', 'choco', 0.07, 0.33),
+(79, NULL, NULL, 'CADBURY OREO BITES CHOCOLATE POUCH 110 G', NULL, 1.00, '11', 'choco', 0.21, 0.33),
+(80, NULL, NULL, 'CADBURY COCOLATE DINKY DECKERS BAG PLASTIC 120 G', NULL, 1.00, '12', 'choco', 0.30, 0.33),
+(81, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE NIBBLES CARAMEL POUCH 120 G', NULL, 1.00, '13', 'choco', 0.39, 0.33),
+(82, NULL, NULL, 'CADBURY CHOCOLATE SQUIRLIES CURLY WURLY POUCH 110 G', NULL, 1.00, '14', 'choco', 0.35, 0.55),
+(83, NULL, NULL, 'CADBURY CHOCOLATE FUDGE MINIS POUCH 120 G', NULL, 1.00, '15', 'choco', 0.29, 0.70),
+(84, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE BAR BAG PLASTIC 110 G', NULL, 1.00, '16', 'choco', 0.48, 0.30),
+(85, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE BAR FRUIT AND NUT BAG PLASTIC 110 G', NULL, 1.00, '17', 'choco', 0.62, 0.30),
+(86, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE BAR WHOLE NUT BAG PLASTIC 120 G', NULL, 1.00, '18', 'choco', 0.78, 0.30),
+(87, NULL, NULL, 'CADBURY DARK MILK CHOCOLATE BAR BOTH RICH AND CREAMY ORIGINAL BAG PLASTIC 85 G', NULL, 1.50, '19', 'choco', 0.48, 0.37),
+(88, NULL, NULL, 'CADBURY DAIRY MILK NEW CHOCOLATE 30 PERCENT LESS SUGAR BAG PLASTIC 85 G', NULL, 1.50, '20', 'choco', 0.62, 0.37),
+(89, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE BAR CARAMEL BAG PLASTIC 120 G', NULL, 1.00, '21', 'choco', 0.69, 0.37),
+(90, NULL, NULL, 'CADBURY NEW CREAMY WHITE CHOCOLATE WITH OREO BAG PLASTIC 120 G', NULL, 1.00, '22', 'choco', 0.85, 0.37),
+(91, NULL, NULL, 'SCADBURY DAIRY MILK CHOCOLATE BAR CARAMEL BAG PLASTIC 200 G', NULL, 1.80, '23', 'choco', 0.49, 0.45),
+(92, NULL, NULL, 'CADBURY WHITE CREAMY WHITE CHOCOLATE BAG PLASTIC 180 G', NULL, 1.80, '24', 'choco', 0.63, 0.45),
+(93, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE BAR CRUNCHY BITS BAG PLASTIC 200 G', NULL, 1.80, '25', 'choco', 0.71, 0.45),
+(94, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE BAR MARVELLOUS SMASHABLES JELLY POPPING CANDY BAG PLASTIC 180 G', NULL, 1.80, '26', 'choco', 0.80, 0.45),
+(95, NULL, NULL, 'CADBURY BOURNVILLE CHOCOLATE BAR DARK CLASSIC BAG PLASTIC 180 G', NULL, 1.80, '27', 'choco', 0.49, 0.55),
+(96, NULL, NULL, 'CADBURY CHOCOLATE BAR DAIRY MILK BAG PLASTIC 200 G', NULL, 1.80, '28', 'choco', 0.57, 0.55),
+(97, NULL, NULL, 'CADBURY CHOCOLATE BAR DAIRY MILK WHOLENUT BAG PLASTIC 200 G', NULL, 1.80, '29', 'choco', 0.65, 0.55),
+(98, NULL, NULL, 'CADBURY CHOCOLATE BAR DAIRY MILK FRUIT AND NUT BAG PLASTIC 200 G', NULL, 1.80, '30', 'choco', 0.76, 0.55),
+(99, NULL, NULL, 'CADBURY CHOCOLATE BAR TWIRL BAG PLASTIC 11 UNITS 236.5 G', NULL, NULL, '31', 'choco', 0.97, 0.42),
+(100, NULL, NULL, 'CADBURY DAIRY MILK CHOCOLATE BAR BAG PLASTIC 10 UNITS 293 G', NULL, NULL, '32', 'choco', 0.97, 0.61),
+(101, NULL, NULL, 'CADBURY CHOCOLATE BAR WISPA BAG PLASTIC 10 UNITS 255 G', NULL, NULL, '33', 'choco', 0.97, 0.74);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profiles`
+--
+
+CREATE TABLE `profiles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `eno` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `project_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `eno`, `project_name`) VALUES
+(1, 'Dharana', 'admin@mail.com', 'dp.jpg', NULL, '$2y$10$AF8M4zp37EsBlqvK9Sef8.cpm3A1vE8rSjG4OdRADHqyZiW8vL66m', NULL, '2020-11-25 05:23:29', '2020-12-27 02:27:36', 'G16304', '6');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `probs`
+--
+ALTER TABLE `probs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT for table `probs`
+--
+ALTER TABLE `probs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+
+--
+-- AUTO_INCREMENT for table `profiles`
+--
+ALTER TABLE `profiles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,32 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Arial';
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    background: black;
+}
+
+.mainBox {
+    width: 500px;
+    display: inline-block;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.2);
+    margin-top: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainBox {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    .mainBox {
+        margin-top: 50px;
+    }
+}
